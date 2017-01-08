@@ -1,3 +1,5 @@
+include _project_vars
+
 mixin header
 	header.header
 		h1 Welcome To Sigxak
@@ -7,3 +9,12 @@ mixin header
 			+ main_menu(menuArray)
 mixin footer
 	footer.footer
+	
+mixin members(array)
+	each item in array
+		.members_item
+			.about_member
+				.about_i_w 
+					img(alt='#{item.name}' src='#{item.src}').about_i
+					b.about_title #{item.name}
+			

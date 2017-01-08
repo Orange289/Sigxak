@@ -1,7 +1,8 @@
 include templates/_global_vars
 include templates/_global_mixins
-include templates/_project_mixins
 include templates/_project_vars
+include templates/_project_mixins
+
 - var array = '';
 block vars
 doctype
@@ -11,9 +12,9 @@ html(lang="ru")
 	body(class='#{array.body_class}')
 		.container
 			+header
-			.wrapper(class='#{array.layout_mod}')
-				.base(class='#{array.layout_mod}')
-					block content_block
+			.wrapper
+				main.base
+					block about
 				+footer
 		+scripts
 		block local_popup
