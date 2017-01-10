@@ -12,9 +12,13 @@ html(lang="ru")
 	body(class='#{array.body_class}')
 		.container
 			+header
-			.wrapper
-				main.base
-					block about
-				+footer
+			main.base
+				block about
+				block portfolio
+				block services
+				block blog
+				block map
+				block contact
+			+footer
 		+scripts
 		block local_popup

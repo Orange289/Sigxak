@@ -93,15 +93,15 @@ mixin breadcrumbs(array,add_class)
 				else
 					a.breadcrumbs_link(href="#")=crumb
 
-mixin main_menu(menuArray)
+mixin main_menu(menuArray,elem)
 	ul.main_menu_list(class="#{menuArray.mod}")
 		each item in menuArray.items
 			if item.active
 				li.main_menu_item.active_mod(class="#{menuArray.mod}")
-					a.main_menu_link(href="#" class="#{menuArray.mod}") #{item.title}
+					a.main_menu_link(href="#" class="#{menuArray.mod} #{elem}") #{item.title}
 			else
 				li.main_menu_item(class="#{menuArray.mod}")
-					a.main_menu_link(href="#" class="#{menuArray.mod}") #{item.title}
+					a.main_menu_link(href="#" class="#{menuArray.mod} #{elem}") #{item.title}
 
 mixin social(items,mod)
 	ul.social_list(class="#{mod}")
@@ -172,8 +172,8 @@ mixin span_list(array,mod)
 			li(class="#{mod}_item")
 				span(class="#{mod}_text")= item
 
-mixin link_list(array,mod)
+mixin link_list(array,mod,elem)
 	ul(class="#{mod}_list")
 		each item in array
 			li(class="#{mod}_item")
-				a(class="#{mod}_link" href="#")= item
+				a(class="#{mod}_link #{elem}" href="#")= item

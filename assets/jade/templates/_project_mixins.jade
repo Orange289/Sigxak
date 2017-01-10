@@ -4,9 +4,9 @@ mixin header
 	header.header
 		h1 Welcome To Sigxak
 		h2 Creative Fashion Stylist
-		+ link_list(smallmenuArray, 'small_menu')
+		+ link_list(smallmenuArray, 'small_menu', 'text_item text_item_smmenu_mod')
 		nav.nav
-			+ main_menu(menuArray)
+			+ main_menu(menuArray, 'text_item text_item_mainmenu_mod')
 mixin footer
 	footer.footer
 	
@@ -16,5 +16,13 @@ mixin members(array)
 			.about_member
 				.about_i_w 
 					img(alt='#{item.name}' src='#{item.src}').about_i
-					b.about_title #{item.name}
+					b.about_title.text_item.text_item_member_mod #{item.name}
+					b.about_position #{item.position}
+					p.about_text #{item.desc}
+					.social.social_member_mod
+						a.social_btn.social_btn_f_mod(href='#') facebook
+						a.social_btn.social_btn_t_mod(href='#') twitter
+						a.social_btn.social_btn_in_mod(href='#') instagram
+						a.social_btn.social_btn_v_mod(href='#') v
+						
 			
