@@ -6,12 +6,12 @@ include templates/_project_mixins
 - var array = '';
 block vars
 doctype
-html(lang="ru")
+html(lang='ru')
 	head
-		+head(array)
+		+ head(array)
 	body(class='#{array.body_class}')
 		.container
-			+header
+			+ header
 			main.base
 				block about
 				block portfolio
@@ -19,6 +19,5 @@ html(lang="ru")
 				block blog
 				block map
 				block contact
-			+footer
-		+scripts
-		block local_popup
+			+ footer
+		+ scripts

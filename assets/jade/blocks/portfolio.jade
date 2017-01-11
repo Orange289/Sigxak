@@ -1,5 +1,7 @@
 include ../templates/_project_vars
 
-.portfolio_block
+.portfolio
 	h3.title Portfolio
-	+ link_list(menuPortfolio, 'portfolio', 'text_item text_item_pmenu_mod')
+	+ link_list(menuPortfolio, 'portfolio', 'text__item text__item_pmenu')
+	.portfolio__list.photos
+		+ portfolio(portfolioArray)

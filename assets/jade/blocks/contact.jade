@@ -1,0 +1,26 @@
+.contact
+	h3.title Contact us
+	form.form.contact__form
+		.contact__left
+			+ form_element({
+				type:'text',
+				class_array:default_field_1,
+				id: 'input_name',
+				placeholder: 'Name'	
+			})
+			+ form_element({
+				type:'email',
+				class_array:default_field_2,
+				id: 'input_email',
+				placeholder: 'E-Mail'	
+			})
+		.contact__right
+			+ form_element({
+				type:'textarea',
+				class_array:default_field_3,
+				id: 'message',
+				placeholder: 'Message'	
+			})
+		input(type='submit' value='Submit').form__btn.contact__btn.contact__btn_submit		
+			
+	

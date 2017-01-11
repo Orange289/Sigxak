@@ -4,25 +4,56 @@ mixin header
 	header.header
 		h1 Welcome To Sigxak
 		h2 Creative Fashion Stylist
-		+ link_list(smallmenuArray, 'small_menu', 'text_item text_item_smmenu_mod')
-		nav.nav
-			+ main_menu(menuArray, 'text_item text_item_mainmenu_mod')
+		+ link_list(smallmenuArray, 'menu_small', 'text__item text__item_smmenu')
+		nav.header__nav
+			+ main_menu(menuArray, 'text__item text__item_mainmenu')
 mixin footer
 	footer.footer
-	
+		.footer__menu 
+			+ main_menu(menuArray, 'text__item text__item_footermenu')
+		.footer__contacts
+			.wrapper
+			
 mixin members(array)
 	each item in array
-		.members_item
-			.about_member
-				.about_i_w 
-					img(alt='#{item.name}' src='#{item.src}').about_i
-					b.about_title.text_item.text_item_member_mod #{item.name}
-					b.about_position #{item.position}
-					p.about_text #{item.desc}
-					.social.social_member_mod
-						a.social_btn.social_btn_f_mod(href='#') facebook
-						a.social_btn.social_btn_t_mod(href='#') twitter
-						a.social_btn.social_btn_in_mod(href='#') instagram
-						a.social_btn.social_btn_v_mod(href='#') v
+		.about__item.members__item
+			.members__img 
+				img(alt='#{item.name}' src='#{item.src}' width='270' height='268')
+			.members__info
+				b.members__title.text__item.text__item_member #{item.name}
+				b.members__position #{item.position}
+				p.members__text #{item.desc}
+				.social.social_member
+					a.social__btn.social__btn_f(href='#') facebook
+					a.social__btn.social__btn_t(href='#') twitter
+					a.social__btn.social__btn_in(href='#') instagram
+					a.social__btn.social__btn_v(href='#') v
+
+mixin portfolio(array)
+	each item in array
+		.portfolio__item.photos__item
+			.photos__img
+				img(alt='#{item.name}' src='#{item.src}' width='483' height='318')
+				.photos__overlay
+					b APP LANDING PAGE
+					span web design
+					
+mixin services(array)
+	each item in array
+		.services__item.functions__item
+			.functions__icon(class='functions__icon_#{item.icon}')
+			b.functions__title #{item.title}
+			p.functions__text #{item.desc}
+			span Read more
+			
+mixin blog(array)
+	each item in array 
+		.blog__item.posts__item
+			.posts__img
+				img(alt='#{item.name}' src='#{item.src}' width='322' height='325')
+			span.posts__category #{item.category}
+			b.posts__title #{item.title}
+			p.posts__text #{item.desc}
+			
 						
 			
